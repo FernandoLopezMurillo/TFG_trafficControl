@@ -1,1 +1,1 @@
-Place your model's web-based (HTML) documentation files in this directory using "index.html" as the home page.
+This branch simulates the movement of the car through the streets and crossroads.
