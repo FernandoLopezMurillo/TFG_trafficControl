@@ -1,0 +1,358 @@
+FATAL [Thread-2] 2024-08-24T13:02:06,763 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (14.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location 10.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:165) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:02:56,241 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (16.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location -1.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:165) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:03:37,980 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (15.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location 10.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:165) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:05:27,088 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (15.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location 10.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:166) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:14:56,975 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (25.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location -1.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:166) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:15:35,827 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (25.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location -1.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:166) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:17:06,757 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (15.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location -1.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:166) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:19:55,570 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (35.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location 10.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:167) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:22:28,505 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (14.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location 10.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:36) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:163) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:25:41,552 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (15.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location 10.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:40) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:65) ~[?:?]
+	at trabajo.Car.step(Car.java:163) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:28:42,877 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (16.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location -1.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:40) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:66) ~[?:?]
+	at trabajo.Car.step(Car.java:171) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:30:55,841 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (16.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: repast.simphony.space.SpatialException: Target location -1.0 is outside of grid's dimensions.
+	at repast.simphony.space.continuous.AbstractPointTranslator.boundsCheck(AbstractPointTranslator.java:49) ~[?:?]
+	at repast.simphony.space.continuous.AbstractPointTranslator.transform(AbstractPointTranslator.java:39) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getLocation(AbstractContinuousSpace.java:255) ~[?:?]
+	at repast.simphony.space.continuous.AbstractContinuousSpace.getObjectsAt(AbstractContinuousSpace.java:250) ~[?:?]
+	at trabajo.Utils.getObjectsAt(Utils.java:40) ~[?:?]
+	at trabajo.Car.getComponentsInFront(Car.java:67) ~[?:?]
+	at trabajo.Car.step(Car.java:172) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+FATAL [Thread-2] 2024-08-24T13:34:06,189 GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (13.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72) ~[?:?]
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336) ~[?:?]
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205) ~[?:?]
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231) ~[?:?]
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375) ~[?:?]
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.reflect.InvocationTargetException
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Iterable.iterator()" because "objectsInFront" is null
+	at trabajo.Car.step(Car.java:175) ~[?:?]
+	at trabajo.Car$$FastClassByCGLIB$$f8c6e32d.invoke(<generated>) ~[?:?]
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53) ~[?:?]
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69) ~[?:?]
+	... 7 more
