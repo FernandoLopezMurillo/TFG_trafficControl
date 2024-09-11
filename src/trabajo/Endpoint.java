@@ -39,7 +39,7 @@ public class Endpoint extends NetworkTile{
 	public void spawn() {
 		this.position = Utils.getCoordinatesOf(this);
 		if(!isTileBlocked()) {
-			Car newCar = new Car(CarState.DRIVING, this.carDirection);
+			Car newCar = new Car(this.carDirection);
 			Utils.addComponent(newCar, this.position);
 		}
 	}

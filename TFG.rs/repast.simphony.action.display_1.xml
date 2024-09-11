@@ -3,46 +3,54 @@
   <type>2D</type>
   <styles>
     <entry>
-      <string>trabajo.Street</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>trabajo.Road</string>
+      <string>trabajo.Style</string>
     </entry>
     <entry>
       <string>trabajo.NetworkTile</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>trabajo.Style</string>
+    </entry>
+    <entry>
+      <string>trabajo.TrafficLight</string>
+      <string>trabajo.Style</string>
     </entry>
     <entry>
       <string>trabajo.Crossroad</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>trabajo.Style</string>
     </entry>
     <entry>
       <string>trabajo.Endpoint</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>trabajo.Style</string>
     </entry>
     <entry>
       <string>trabajo.Car</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>trabajo.Style</string>
     </entry>
   </styles>
   <editedStyles>
     <entry>
-      <string>trabajo.Street</string>
-      <string>trabajo.Street.style_6.xml</string>
+      <string>trabajo.Road</string>
+	  <null/>
     </entry>
     <entry>
       <string>trabajo.NetworkTile</string>
-      <string>trabajo.NetworkTile.style_1.xml</string>
+      <null/>
+    </entry>
+    <entry>
+      <string>trabajo.TrafficLight</string>
+      <null/>
     </entry>
     <entry>
       <string>trabajo.Crossroad</string>
-      <string>trabajo.Crossroad.style_6.xml</string>
+      <null/>
     </entry>
     <entry>
       <string>trabajo.Endpoint</string>
-      <string>trabajo.Endpoint.style_4.xml</string>
+      <null/>
     </entry>
     <entry>
       <string>trabajo.Car</string>
-      <string>trabajo.Car.style_5.xml</string>
+      <null/>
     </entry>
   </editedStyles>
   <netStyles/>
@@ -55,19 +63,23 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>808103071</hashCode>
+    <hashCode>-145584964</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>space</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
     <entry>
-      <string>trabajo.Street</string>
-      <int>0</int>
+      <string>trabajo.Road</string>
+      <int>1</int>
     </entry>
     <entry>
       <string>trabajo.NetworkTile</string>
-      <int>1</int>
+      <int>0</int>
+    </entry>
+    <entry>
+      <string>trabajo.TrafficLight</string>
+      <int>4</int>
     </entry>
     <entry>
       <string>trabajo.Crossroad</string>
@@ -79,7 +91,7 @@
     </entry>
     <entry>
       <string>trabajo.Car</string>
-      <int>4</int>
+      <int>5</int>
     </entry>
   </layerOrder>
   <projections>

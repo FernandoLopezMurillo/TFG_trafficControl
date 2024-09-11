@@ -1,21 +1,24 @@
 package trabajo;
 
 import java.util.Random;
-
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.NdPoint;
 import trabajo.GlobalConstants.*;
 
 public class Car extends NetworkComponent{
 	
-	//We will use the CarState on the next updates
 	private CarState currState;
-	private CarState nextState;
 	
 	//Current direction
 	private Direction currDirection;
-	//Next direction
-	private Direction nextDirection;
+
+	
+	//Constructor
+	public Car(Direction carDirection) {
+		this.currState = CarState.DRIVING;
+		this.currDirection = carDirection;
+		this.componentType = NetworkComponent.ComponentType.CAR;
+	}
 	
 	public CarState getState() {
 		return currState;
@@ -26,15 +29,17 @@ public class Car extends NetworkComponent{
 	}
 	
 	public void setState(CarState state) {
-		this.nextState = state;
+		this.currState = state;
 	}
 	
-	//Constructor
-	public Car(CarState state, Direction carDirection) {
-		this.currState = state;
-		this.currDirection = carDirection;
-		this.nextDirection = null;
-		this.componentType = NetworkComponent.ComponentType.CAR;
+	//Check if the car is driving
+	public boolean isDriving() {
+		return this.currState.equals(CarState.DRIVING);
+	}
+	
+	//Check if the car is stop waiting
+	public boolean isWaiting() {
+		return this.currState.equals(CarState.WAITING);
 	}
 	
 	//Return all the components the car has in front of its current position
@@ -116,7 +121,7 @@ public class Car extends NetworkComponent{
 		Direction[] possibleDirections = getTurningDirections(crossroad.getPossibleDirections());
 		Random r = new Random();
 		int rndIndex = r.nextInt(possibleDirections.length);
-		this.nextDirection = possibleDirections[rndIndex];
+		this.currDirection = possibleDirections[rndIndex];
 	}
 	
 	//Check if the next cell the car is going to move is inside the grid
@@ -128,10 +133,10 @@ public class Car extends NetworkComponent{
 	private boolean notOutOfBounds(double x, double y) {
 		boolean notOutOfBounds = false;
 		switch (this.currDirection) {
-			case UP: notOutOfBounds = y < 9; break;
+			case UP: notOutOfBounds = y < GlobalConstants.SPACE_HEIGHT - 1; break;
 			case DOWN: notOutOfBounds = y > 0; break;
 			case LEFT: notOutOfBounds = x > 0; break;
-			case RIGHT: notOutOfBounds = x < 9; break;
+			case RIGHT: notOutOfBounds = x < GlobalConstants.SPACE_WIDTH - 1; break;
 		}
 		return notOutOfBounds;
 	}
@@ -146,26 +151,45 @@ public class Car extends NetworkComponent{
 		Iterable<NetworkComponent> objectsInFront = getComponentsInFront();
 		for(NetworkComponent component : objectsInFront) {
 			switch (component.getComponentType()) {
+				//Check if the car has another car waiting in front, if so, allowedToMove becomes false
+				case CAR:
+					Car car = (Car) component;
+					if(car.getState().equals(CarState.WAITING)&&
+							car.getDirection().equals(this.currDirection)) {
+						allowedToMove = false;
+					}
+					break;
+					
 				case CROSSROAD:
-					crossroad = (Crossroad) component;					
+					crossroad = (Crossroad) component;
+					break;
+				//Check if the traffic light is open, if not, allowedToMove becomes false	
+				case TRAFFIC_LIGHT:
+					TrafficLight trafficLight = (TrafficLight) component;
+					if(!trafficLight.isGreen()&& trafficLight.getDirection().equals(this.currDirection)){
+						allowedToMove = false;
+					}
+					break;
+				default:
+					break;
 			}
 		}
 		
-		//Checks if the cars nextDirection have been updated, if so, update the currDirection 
-		if(this.nextDirection != null) {
-			this.currDirection = this.nextDirection;
-			this.nextDirection = null;
-		}
-		//Move the car to the next position if it is not out of bounds, if so, delete the car
-		NdPoint newPos = Utils.moveIntoDirection(currentPos, this.currDirection);
-		if(notOutOfBounds(newPos)) {
-			Utils.moveTo(this, newPos);
-			if(crossroad!=null) {
-				pickNextDirection(crossroad);
-			} 
+		//Check if the car is allowed to move, if not, change its state to waiting
+		if(allowedToMove) {
+			setState(CarState.DRIVING);
+			//Move the car to the next position if it is not out of bounds, if so, delete the car
+			NdPoint newPos = Utils.getFuturePosition(currentPos, this.currDirection);
+			if(notOutOfBounds(newPos)) {
+				Utils.moveTo(this, newPos);
+				if(crossroad!=null) {
+					pickNextDirection(crossroad);
+				} 
+			} else {
+				Utils.remove(this);
+			}
 		} else {
-			Utils.remove(this);
+			setState(CarState.WAITING);
 		}
 	}
-	
 }

@@ -50,13 +50,13 @@ public class Utils {
 	}
 	
 	//Add a component in that position given by the parameters x and y
-	private static void addComponent(NetworkComponent component, double x, double y) {
+	public static void addComponent(NetworkComponent component, double x, double y) {
 		simContext.add(component);
 		simSpace.moveTo(component, x, y);
 	}
 	
 	//Return the position it will move to if follows that direction 
-	public static NdPoint moveIntoDirection(NdPoint pos, Direction dir) {
+	public static NdPoint getFuturePosition(NdPoint pos, Direction dir) {
 		double x = pos.getX();
 		double y = pos.getY();
 		switch(dir) {

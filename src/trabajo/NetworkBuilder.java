@@ -12,8 +12,8 @@ import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridBuilderParameters;
 import repast.simphony.space.grid.SimpleGridAdder;
 import repast.simphony.space.grid.StrictBorders;
-import trabajo.GlobalConstants.CarState;
 import trabajo.GlobalConstants.Direction;
+import trabajo.GlobalConstants.LightState;
 
 
 public class NetworkBuilder implements ContextBuilder<NetworkComponent> {
@@ -46,28 +46,45 @@ public class NetworkBuilder implements ContextBuilder<NetworkComponent> {
 	                )
 	        );
 	     
-	     //Create the streets, crossroads, endpoints
-		 NetworkComponent tile;
+	     createRoads();
+	     createEndpoints();
+		 createTrafficLights();
+		 
+		 return context ;
+	}
+	
+	private void createRoads() {
+		//Create the roads
+		 NetworkComponent road;
 		 for (int i=0; i<10; i++) {
 			 for(int j=0; j<10; j++) {
 				 if(i==5&&j==5) {
-					 tile = new Crossroad(new Direction[] {Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT});
-					 context.add(tile);
+					 road = new Crossroad(new Direction[] {Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT});
+					 Utils.addComponent(road, i, j);
 				 } else if(i==5 || j==5) {
-					 tile = new Street();
-					 context.add(tile);
-				 }else {
-					 tile = new NetworkTile();
-					 context.add(tile);
+					 road = new Road();
+					 Utils.addComponent(road, i, j);
 				 }
-				 simSpace.moveTo(tile, i, j);
 			 }
 		 }
-		 
-		 tile = new Endpoint(Direction.UP);
-		 Utils.addComponent(tile, new NdPoint(5,0));
-		 
-		 return context ;
+	}
+	
+	private void createEndpoints() {
+		//Create the endpoints
+		NetworkComponent endpoint;
+		endpoint = new Endpoint(Direction.UP);
+		Utils.addComponent(endpoint, new NdPoint(5,0));
+		endpoint = new Endpoint(Direction.RIGHT);
+		Utils.addComponent(endpoint, new NdPoint(0,5));
+	}
+	
+	private void createTrafficLights() {
+		//Create the traffic lights
+		NetworkComponent trafficLight;
+		trafficLight = new TrafficLight(8, 8, LightState.GREEN, Direction.UP);
+		Utils.addComponent(trafficLight, new NdPoint(5,4));
+		trafficLight = new TrafficLight(8, 8, LightState.RED, Direction.RIGHT);
+		Utils.addComponent(trafficLight, new NdPoint(4,5));
 	}
 
 }

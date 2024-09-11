@@ -2,7 +2,7 @@ package trabajo;
 
 public class NetworkTile extends NetworkComponent{
 
-	public enum TileType {STREET, ENDPOINT, BLOCK, CROSSROAD};
+	public enum TileType {ROAD, ENDPOINT, BLOCK, CROSSROAD};
 
 	protected TileType tile_type;	
 	public NetworkTile()
