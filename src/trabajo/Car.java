@@ -86,7 +86,9 @@ public class Car extends NetworkComponent{
 	
 	//Return all the possible directions when the car arrives to a crossroad
 	private Direction[] getTurningDirections(Direction[] crossroadDirections) {
-		Direction[] possibleDirections = new Direction[crossroadDirections.length -1];
+		//REVISAR EL COMENTARIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		//Now on the creation of the crossroad you dont add the opposite direction
+		Direction[] possibleDirections = new Direction[crossroadDirections.length];
 		int index = 0;
 		for(int i=0; i<crossroadDirections.length; i++) {
 			Direction dir = crossroadDirections[i];
@@ -141,6 +143,78 @@ public class Car extends NetworkComponent{
 		return notOutOfBounds;
 	}
 	
+	//Check if another car is driving through the roundabout, if so and a collision could occur, 
+	//the car attempting to enter the roundabout will stop
+	private boolean isDrivingPossible(NdPoint pos, Direction direction) {
+		double x = pos.getX();
+		double y = pos.getY();
+		boolean drivingPossible = true;
+		//Check if there is already a car in the roundabout that could cause collision, if so, the car stops
+		switch(direction) {
+		 case UP:
+			 if(x>0) {
+				 x -= 1;
+				 y += 1;
+				 Iterable<NetworkComponent> components = Utils.getObjectsAt(x, y);
+				 for (NetworkComponent component : components) {
+					if(component.componentType.equals(ComponentType.CAR)) {
+						Car car = (Car) component;
+						if(car.currState.equals(CarState.DRIVING)&& car.currDirection.equals(Direction.RIGHT)) {
+							drivingPossible = false;
+						}
+					}
+				 }
+			 }
+			 break;
+		 case DOWN:
+			 if(x<GlobalConstants.SPACE_WIDTH - 1) {
+				 x += 1;
+				 y -= 1;
+				 Iterable<NetworkComponent> components = Utils.getObjectsAt(x, y);
+				 for (NetworkComponent component : components) {
+					if(component.componentType.equals(ComponentType.CAR)) {
+						Car car = (Car) component;
+						if(car.currState.equals(CarState.DRIVING)&& car.currDirection.equals(Direction.LEFT)) {
+							drivingPossible = false;
+						}
+					}
+				 }
+			 }
+			 break;
+		 case LEFT:
+			 if(y>0) {
+				 x -= 1;
+				 y -= 1;
+				 Iterable<NetworkComponent> components = Utils.getObjectsAt(x, y);
+				 for (NetworkComponent component : components) {
+					if(component.componentType.equals(ComponentType.CAR)) {
+						Car car = (Car) component;
+						if(car.currState.equals(CarState.DRIVING)&& car.currDirection.equals(Direction.UP)) {
+							drivingPossible = false;
+						}
+					}
+				 }
+			 }
+			 break;
+		 case RIGHT:
+			 if(y>GlobalConstants.SPACE_HEIGHT - 1) {
+				 x += 1;
+				 y += 1;
+				 Iterable<NetworkComponent> components = Utils.getObjectsAt(x, y);
+				 for (NetworkComponent component : components) {
+					if(component.componentType.equals(ComponentType.CAR)) {
+						Car car = (Car) component;
+						if(car.currState.equals(CarState.DRIVING)&& car.currDirection.equals(Direction.DOWN)) {
+							drivingPossible = false;
+						}
+					}
+				 }
+			 }
+			 break;
+		}
+		return drivingPossible;
+	}
+	
 	//Method which simulates the car movement
 	@ScheduledMethod(start=1.0, interval=1)
 	public void step() {
@@ -162,6 +236,12 @@ public class Car extends NetworkComponent{
 					
 				case CROSSROAD:
 					crossroad = (Crossroad) component;
+					NdPoint pos = Utils.getCoordinatesOf(this);
+					//If there is a crossroad ahead, check if any car is driving through the roundabout
+					if(!isDrivingPossible(pos, this.currDirection)) {
+						allowedToMove = false;
+					}
+					
 					break;
 				//Check if the traffic light is open, if not, allowedToMove becomes false	
 				case TRAFFIC_LIGHT:

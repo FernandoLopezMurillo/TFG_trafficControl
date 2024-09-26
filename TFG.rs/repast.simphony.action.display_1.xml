@@ -1,21 +1,21 @@
 <repast.simphony.visualization.engine.CartesianDisplayDescriptor simphonyVersion="2.10.0">
-  <name>New Display</name>
+  <name>TFG Display</name>
   <type>2D</type>
   <styles>
-    <entry>
-      <string>trabajo.Road</string>
-      <string>trabajo.Style</string>
-    </entry>
     <entry>
       <string>trabajo.NetworkTile</string>
       <string>trabajo.Style</string>
     </entry>
     <entry>
-      <string>trabajo.TrafficLight</string>
+      <string>trabajo.TrafficLightOffset</string>
       <string>trabajo.Style</string>
     </entry>
     <entry>
       <string>trabajo.Crossroad</string>
+      <string>trabajo.Style</string>
+    </entry>
+    <entry>
+      <string>trabajo.TrafficLightWithoutOffset</string>
       <string>trabajo.Style</string>
     </entry>
     <entry>
@@ -24,15 +24,15 @@
     </entry>
     <entry>
       <string>trabajo.Car</string>
+      <string>trabajo.Style</string>
+    </entry>
+    <entry>
+      <string>trabajo.Road</string>
       <string>trabajo.Style</string>
     </entry>
   </styles>
   <editedStyles>
     <entry>
-      <string>trabajo.Road</string>
-	  <null/>
-    </entry>
-    <entry>
       <string>trabajo.NetworkTile</string>
       <null/>
     </entry>
@@ -50,6 +50,10 @@
     </entry>
     <entry>
       <string>trabajo.Car</string>
+      <null/>
+    </entry>
+    <entry>
+      <string>trabajo.Road</string>
       <null/>
     </entry>
   </editedStyles>
@@ -63,23 +67,23 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-145584964</hashCode>
+    <hashCode>-1559628529</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>space</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
     <entry>
-      <string>trabajo.Road</string>
-      <int>1</int>
-    </entry>
-    <entry>
       <string>trabajo.NetworkTile</string>
       <int>0</int>
     </entry>
     <entry>
-      <string>trabajo.TrafficLight</string>
-      <int>4</int>
+      <string>trabajo.TrafficLightOffset</string>
+      <int>6</int>
+    </entry>
+    <entry>
+      <string>trabajo.TrafficLightWithoutOffset</string>
+      <int>5</int>
     </entry>
     <entry>
       <string>trabajo.Crossroad</string>
@@ -91,7 +95,11 @@
     </entry>
     <entry>
       <string>trabajo.Car</string>
-      <int>5</int>
+      <int>4</int>
+    </entry>
+    <entry>
+      <string>trabajo.Road</string>
+      <int>1</int>
     </entry>
   </layerOrder>
   <projections>

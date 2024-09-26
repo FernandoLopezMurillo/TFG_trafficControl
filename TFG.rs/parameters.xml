@@ -2,5 +2,6 @@
 <parameters>
 
 	<parameter name="randomSeed" displayName="Default Random Seed" type="int" defaultValue="__NULL__" />
-
+	<parameter name="_timeUnits_" displayName="Time Units" type="string" defaultValue="seconds" />
+		
 </parameters>

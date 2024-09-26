@@ -27,7 +27,7 @@ public class NetworkBuilder implements ContextBuilder<NetworkComponent> {
 		 ContinuousSpaceFactoryFinder.createContinuousSpaceFactory(null).createContinuousSpace ("space", context ,
 		 new SimpleCartesianAdder<NetworkComponent>() ,
 		 new repast.simphony.space.continuous.StrictBorders() ,
-		 10 , 10);
+		 GlobalConstants.SPACE_WIDTH , GlobalConstants.SPACE_HEIGHT);
 		 
 		 //Initializes the context and the space
 		 try {
@@ -42,7 +42,7 @@ public class NetworkBuilder implements ContextBuilder<NetworkComponent> {
 	                "grid", context, 
 	                new GridBuilderParameters<NetworkComponent>(
 	                        new StrictBorders(),
-	                        new SimpleGridAdder<NetworkComponent>(), true, 10, 10
+	                        new SimpleGridAdder<NetworkComponent>(), true, GlobalConstants.SPACE_WIDTH, GlobalConstants.SPACE_HEIGHT
 	                )
 	        );
 	     
@@ -50,16 +50,21 @@ public class NetworkBuilder implements ContextBuilder<NetworkComponent> {
 	     createEndpoints();
 		 createTrafficLights();
 		 
+	     
+		 /*createRoads2();
+		 createEndpoints2();
+		 createTrafficLights2();
+		 */
 		 return context ;
 	}
 	
 	private void createRoads() {
 		//Create the roads
 		 NetworkComponent road;
-		 for (int i=0; i<10; i++) {
-			 for(int j=0; j<10; j++) {
+		 for (int i=0; i<11; i++) {
+			 for(int j=0; j<11; j++) {
 				 if(i==5&&j==5) {
-					 road = new Crossroad(new Direction[] {Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT});
+					 road = new Crossroad(new Direction[] {Direction.UP, Direction.RIGHT});
 					 Utils.addComponent(road, i, j);
 				 } else if(i==5 || j==5) {
 					 road = new Road();
@@ -72,19 +77,69 @@ public class NetworkBuilder implements ContextBuilder<NetworkComponent> {
 	private void createEndpoints() {
 		//Create the endpoints
 		NetworkComponent endpoint;
-		endpoint = new Endpoint(Direction.UP);
+		endpoint = new Endpoint(Direction.UP,3);
 		Utils.addComponent(endpoint, new NdPoint(5,0));
-		endpoint = new Endpoint(Direction.RIGHT);
+		endpoint = new Endpoint(Direction.RIGHT,5);
 		Utils.addComponent(endpoint, new NdPoint(0,5));
 	}
 	
 	private void createTrafficLights() {
 		//Create the traffic lights
 		NetworkComponent trafficLight;
-		trafficLight = new TrafficLight(8, 8, LightState.GREEN, Direction.UP);
+		trafficLight = new TrafficLightWithoutOffset(8, 8, LightState.GREEN, Direction.UP);
 		Utils.addComponent(trafficLight, new NdPoint(5,4));
-		trafficLight = new TrafficLight(8, 8, LightState.RED, Direction.RIGHT);
+		trafficLight = new TrafficLightWithoutOffset(8, 8, LightState.RED, Direction.RIGHT);
 		Utils.addComponent(trafficLight, new NdPoint(4,5));
 	}
-
+	
+	private void createRoads2() {
+		//Create the roads
+		 NetworkComponent road;
+		 for (int i=0; i<GlobalConstants.SPACE_WIDTH; i++) {
+			 for(int j=0; j<GlobalConstants.SPACE_HEIGHT; j++) {
+				 if(i==4&&j==4) {
+					 road = new Crossroad(new Direction[] {Direction.DOWN, Direction.RIGHT});
+					 Utils.addComponent(road, i, j);
+				 }else if(i==6&&j==4) {
+					 road = new Crossroad(new Direction[] {Direction.UP, Direction.RIGHT});
+					 Utils.addComponent(road, i, j);
+				 }else if(i==6&&j==6) {
+					 road = new Crossroad(new Direction[] {Direction.UP, Direction.LEFT});
+					 Utils.addComponent(road, i, j);
+				 }else if(i==4&&j==6) {
+					 road = new Crossroad(new Direction[] {Direction.DOWN, Direction.LEFT});
+					 Utils.addComponent(road, i, j);
+				 } else if(i==6||j==6||i==4||j==4) {
+					 road = new Road();
+					 Utils.addComponent(road, i, j);
+				 }
+			 }
+		 }
+	}
+	
+	private void createEndpoints2() {
+		//Create the endpoints
+		NetworkComponent endpoint;
+		endpoint = new Endpoint(Direction.UP,3);
+		Utils.addComponent(endpoint, new NdPoint(6,0));
+		endpoint = new Endpoint(Direction.RIGHT,5);
+		Utils.addComponent(endpoint, new NdPoint(0,4));
+		endpoint = new Endpoint(Direction.DOWN,2);
+		Utils.addComponent(endpoint, new NdPoint(4,10));
+		endpoint = new Endpoint(Direction.LEFT,10);
+		Utils.addComponent(endpoint, new NdPoint(10,6));
+	}
+	
+	private void createTrafficLights2() {
+		//Create the traffic lights
+		NetworkComponent trafficLight;
+		trafficLight = new TrafficLightOffset(8, 16, LightState.GREEN, Direction.UP, 0);
+		Utils.addComponent(trafficLight, new NdPoint(6,3));
+		trafficLight = new TrafficLightOffset(8, 16, LightState.RED, Direction.RIGHT, 8);
+		Utils.addComponent(trafficLight, new NdPoint(3,4));
+		trafficLight = new TrafficLightOffset(8, 16, LightState.RED, Direction.DOWN, 16);
+		Utils.addComponent(trafficLight, new NdPoint(4,7));
+		trafficLight = new TrafficLightOffset(8, 16, LightState.RED, Direction.LEFT, 8);
+		Utils.addComponent(trafficLight, new NdPoint(7,6));
+	}
 }

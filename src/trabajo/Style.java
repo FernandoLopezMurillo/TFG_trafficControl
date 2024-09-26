@@ -7,7 +7,7 @@ import saf.v3d.scene.VSpatial;
 import trabajo.Car;
 import trabajo.NetworkComponent;
 import trabajo.NetworkTile;
-import trabajo.TrafficLight;
+import trabajo.TrafficLightWithoutOffset;
 import trabajo.NetworkComponent.ComponentType;
 
 

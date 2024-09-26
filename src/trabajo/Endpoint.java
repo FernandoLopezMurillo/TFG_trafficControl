@@ -1,5 +1,8 @@
 package trabajo;
 
+import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.engine.schedule.ISchedule;
+import repast.simphony.engine.schedule.ScheduleParameters;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.NdPoint;
 import trabajo.GlobalConstants.*;
@@ -7,6 +10,7 @@ import trabajo.GlobalConstants.*;
 public class Endpoint extends NetworkTile{
 	private NdPoint position;
 	private Direction carDirection;
+	private double interval;
 	
 	public Endpoint() {
 		super();
@@ -14,9 +18,11 @@ public class Endpoint extends NetworkTile{
 		this.position = Utils.getCoordinatesOf(this);
 	}
 	
-	public Endpoint(Direction carDirection) {
+	public Endpoint(Direction carDirection, double interval) {
 		this();
 		this.carDirection = carDirection;
+		this.interval = interval;
+		scheduleSpawn();
 	}
 	
 	//Check if the endpoint is currently blocked by another car
@@ -34,8 +40,16 @@ public class Endpoint extends NetworkTile{
 		return blocked;
 	}
 	
+	//Instead of doing a ScheduledMethod where all Endpoints share the same interval for cars creation,
+	//this method allows each Endpoint to have its own interval specified by the user 
+	private void scheduleSpawn() {
+		ISchedule schedule = RunEnvironment.getInstance().getCurrentSchedule();
+		//The value 5 represents the tick where the scheduled method starts, this can also be specified by the user
+		ScheduleParameters params = ScheduleParameters.createRepeating(5.0, this.interval);
+		schedule.schedule(params,this, "spawn");
+	}
+	
 	//Method to create cars
-	@ScheduledMethod(start= 5.0, interval = 6)
 	public void spawn() {
 		this.position = Utils.getCoordinatesOf(this);
 		if(!isTileBlocked()) {
