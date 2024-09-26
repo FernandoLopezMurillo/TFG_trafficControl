@@ -86,7 +86,6 @@ public class Car extends NetworkComponent{
 	
 	//Return all the possible directions when the car arrives to a crossroad
 	private Direction[] getTurningDirections(Direction[] crossroadDirections) {
-		//REVISAR EL COMENTARIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		//Now on the creation of the crossroad you dont add the opposite direction
 		Direction[] possibleDirections = new Direction[crossroadDirections.length];
 		int index = 0;
