@@ -1,19 +1,14 @@
-This branch adds some traffic lights the car should check before continue driving.
+This branch introduces two-way roads, roundabouts, and a new type of traffic light with an offset feature.
 
 UPDATES
 Car.java
-  - Delete nextDirection lack of use
-  - Delete nextState lack of use
-  - Changes in the switch at the method 'step'
-Utils.java
-  - Rename from 'moveIntoDirection' to 'getFuturePosition' because the previous name led to misunderstandings
-GlobalConstants.java
-  - Delete 'WAITING' from CarState because of the lack of use
-  - Add the enumeration LightState
-Road.java
-  - Rename the class from 'Street' to 'Road'
-NetworkBuilder.java
-  - Create a new endpoint
-  - Create new traffic lights
+  - Change method "getTurningDirections" because with the two-way streets the opposite direction is no longer added to the list "possibleDirections"
+  - Create method "isDrivingPossible" 
+Endpoint.java
+  - Change the scheduledMethod 
 TrafficLight.java
-  - New class
+  - Change to abstract class so we can create different types of traffic lights
+TrafficLightOffset.java
+  - Create new class
+TrafficLightWithoutOffset.java
+  - Refactor of the old class TrafficLight
